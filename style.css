@@ -1,0 +1,119 @@
+/* Reset some default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: WhiteSmoke;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background-color: DarkBlue;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Main Content Styling */
+main {
+    padding: 2rem 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+	margin-top: 1rem;
+    color: DarkBlue;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Download Links */
+.downloads ul {
+    list-style: none;
+    padding: 0;
+}
+
+.downloads li {
+    margin-bottom: 1rem;
+}
+
+.downloads a {
+    font-size: 1.1rem;
+    color: IndianRed;
+    text-decoration: none;
+}
+
+.downloads a:hover {
+    text-decoration: underline;
+}
+
+/* Image Gallery */
+.image-gallery {
+    text-align: center;
+}
+
+.main-image {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Figures Section */
+.figures {
+    margin-top: 3rem;
+}
+
+.subfigures {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.subfigures figure {
+    text-align: center;
+    flex: 1;
+}
+
+.subfigures img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: DarkBlue;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+

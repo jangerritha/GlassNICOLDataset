@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Object Dataset</title>
+    <link rel="stylesheet" href="style.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Transparent Object Dataset for Human-Robot Interaction</h1>
+        <p>A dataset for transparent object detection, classification, and surface reconstruction captured using a humanoid robot.</p>
+    </div>
+</header>
+
+<main>
+
+	<section class="image-gallery">
+        <div class="container">
+            <img src="assets/nicol.JPG" alt="Robot Setup" class="main-image">
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Dataset Overview</h2>
+            <p>This dataset consists of 7700 frames captured from 100 scenes involving transparent objects. 
+			It includes data from multiple cameras mounted on a humanoid robot. 
+			The dataset is designed for challenging tasks such as object detection, depth estimation, and robot grasping for transparent materials like glasses.</p>
+        </div>
+    </section>
+
+    <section class="downloads">
+        <div class="container">
+            <h2>Download Dataset</h2>
+            <div class="download-links">
+                <div class="download-item">
+                    <i class="fas fa-download"></i>
+                    <a href="path/to/dataset.zip" target="_blank">Dataset (Training and Validations Scenes)</a>
+                </div>
+				 <div class="download-item">
+                    <i class="fas fa-download"></i>
+                    <a href="path/to/dataset.zip" target="_blank">Dataset (Testing Split captured during Experiments)</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-file-alt"></i>
+                    <a href="path/to/training_data.json" target="_blank">Training JSON Files</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-file-alt"></i>
+                    <a href="path/to/validation_data.json" target="_blank">Validation JSON Files</a>
+                </div>
+                <div class="download-item">
+                    <i class="fas fa-cogs"></i>
+                    <a href="path/to/model_checkpoints" target="_blank">Model Checkpoints</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="figures">
+        <div class="container">
+            <h2>Dataset Modalities Visualization</h2>
+            <div class="subfigures">
+                <figure>
+                    <img src="assets/rgb.png" alt="Sample 1">
+                    <figcaption></figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/depth.png" alt="Sample 2">
+                    <figcaption></figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/masks.png" alt="Sample 3">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; Lukáš Gajdošech, Hassan Ali, Jan-Gerrit Habekost, Martin Madaras and Matthias Kerzel</p>
+    </div>
+</footer>
+
+</body>
+</html>
