@@ -47,6 +47,8 @@
                 <a class="download-btn" href="https://github.com/gajdosech2/GlassNICOL2025" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <a class="download-btn" href="#download-section" onclick="document.getElementById('download-section').scrollIntoView({behavior: 'smooth'}); return false;"><i class="fas fa-download"></i> Download Dataset</a>
             </div>
+            <div style="text-align:center; margin-top:1.5em;">
+            </div>
         </div>
     </section>
 
@@ -137,7 +139,7 @@ document.getElementById('imgModal').onclick = function(e) {
     <!-- Auto-Labeling Pipeline Section -->
     <section class="pipeline glass">
         <div class="container">
-            <h2>Auto-Labeling Pipeline</h2>
+            <h2 style="text-align:center;">Auto-Labeling Pipeline</h2>
             <p>
                 Our pipeline uses depth sensing, color verification, and object detection to create accurate segmentation masks and bounding boxes. Depth images are converted to 3D point clouds, objects are detected and filtered by height and color, and final candidates are verified with YOLO-World and segmented with the Segment Anything Model (SAM). All annotations are created automatically, minimizing human labor.
             </p>
@@ -182,10 +184,10 @@ document.getElementById('imgModal').onclick = function(e) {
     <!-- Bartending HRI Scenario Section -->
     <section class="hri-scenario glass">
         <div class="container">
-            <h2>Bartending HRI Scenario</h2>
+            <h2 style="text-align:center;">Bartending HRI Scenario</h2>
             <p>
                 Our dataset was collected in a real-world human-robot interaction scenario, where the NICOL humanoid robot acts as a bartender, perceiving and manipulating glasses on a cluttered tabletop. The robot uses multi-view perception and our auto-labeling pipeline to detect, segment, and interact with transparent objects.<br><br>
-                <b>Watch the scenario video below:</b>
+                <b style="display:block; text-align:center;">Watch the scenario video below</b>
             </p>
             <video controls style="width:100%;max-width:700px;margin:1em auto;display:block;">
                 <source src="assets/shaken_not_stirred_IROS_2025_short_compressed.mp4" type="video/mp4">
@@ -224,8 +226,8 @@ document.getElementById('imgModal').onclick = function(e) {
     </section>
     <!-- Footer -->
     <footer class="glass">
-        <div class="container">
-            <p>&copy; Lukáš Gajdošech, Hassan Ali, Jan-Gerrit Habekost, Martin Madaras, Matthias Kerzel</p>
+        <div class="container" style="text-align:center;">
+            <p style="color:#111; margin-top:0.5em;">&copy; Lukáš Gajdošech, Hassan Ali, Jan-Gerrit Habekost, Martin Madaras, Matthias Kerzel, and Stefan Wermter</p>
         </div>
     </footer>
 </body>
