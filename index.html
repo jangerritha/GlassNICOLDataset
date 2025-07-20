@@ -56,26 +56,73 @@
             <h2>Dataset Modalities</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/fish.png" alt="Eye Camera RGB Texture" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <a href="assets/fish.png" class="popup-link"><img src="assets/fish.png" alt="Eye Camera RGB Texture" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
                     <div class="caption">Eye Camera RGB Texture</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/side.png" alt="Side RealSense RGB" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <a href="assets/texture.png" class="popup-link"><img src="assets/texture.png" alt="Head RealSense RGB" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
+                    <div class="caption">Head RealSense RGB</div>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/side.png" class="popup-link"><img src="assets/side.png" alt="Side RealSense RGB" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
                     <div class="caption">Side RealSense RGB</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/fusion_crop.png" alt="Fusion of all RGB-D Views" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <a href="assets/fusion_crop.png" class="popup-link"><img src="assets/fusion_crop.png" alt="Fusion of all RGB-D Views" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
                     <div class="caption">Fusion of all RGB-D Views</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/prediction.png" alt="Network Prediction" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <a href="assets/prediction.png" class="popup-link"><img src="assets/prediction.png" alt="Network Prediction" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
                     <div class="caption">Network Prediction</div>
                 </div>
-            </div>
-            <p class="caption" style="margin-top:1em;">Example scene from the validation split, showing different camera modalities and network output.</p>
+                <div class="gallery-item">
+                    <a href="assets/annotation.png" class="popup-link"><img src="assets/annotation.png" alt="Ground Truth Label" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
+                    <div class="caption">Ground Truth Label</div>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/depth.png" class="popup-link"><img src="assets/depth.png" alt="Depth Map" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
+                    <div class="caption">Depth Map</div>
+                </div>
+                <div class="gallery-item">
+                    <a href="assets/glass_meshes.png" class="popup-link"><img src="assets/glass_meshes.png" alt="Glass Meshes" style="width:100%;max-width:220px;display:block;margin:0 auto;"></a>
+                    <div class="caption">Glass Meshes</div>
+                </div>
+<!-- Image Popup Modal (moved outside gallery for proper overlay) -->
+</section>
+<div id="imgModal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;">
+    <span id="imgModalClose" style="position:absolute;top:1.5em;right:2em;font-size:2.5em;color:#fff;cursor:pointer;font-family:sans-serif;z-index:10001;">&times;</span>
+    <img id="imgModalImg" src="" alt="Popup" style="max-width:95vw;max-height:90vh;box-shadow:0 8px 32px #000a;border-radius:12px;display:block;margin:auto;z-index:10000;">
+</div>
+
+<script>
+// Simple image popup for gallery
+document.querySelectorAll('.popup-link').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    var modal = document.getElementById('imgModal');
+    var modalImg = document.getElementById('imgModalImg');
+    modalImg.src = this.href;
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+  });
+});
+document.getElementById('imgModalClose').onclick = function() {
+  document.getElementById('imgModal').style.display = 'none';
+  document.getElementById('imgModalImg').src = '';
+};
+document.getElementById('imgModal').onclick = function(e) {
+  if (e.target === this || e.target === document.getElementById('imgModalImg')) {
+    this.style.display = 'none';
+    document.getElementById('imgModalImg').src = '';
+  }
+};
+</script>
+</body>
         </div>
     </section>
-    <!-- About Section -->
+
+        <!-- About Section -->
     <section class="about glass">
         <div class="container">
             <h2>About the Dataset</h2>
@@ -97,6 +144,22 @@
             <img src="assets/iros2025_fig1_v9.png" alt="Auto-labeling pipeline" style="width:100%;max-width:700px;margin:1em auto;display:block;">
         </div>
     </section>
+
+    <!-- Key Features & Contributions Section -->
+   <!-- <section class="features glass">
+        <div class="container">
+            <h2>Key Features & Contributions</h2>
+            <ul>
+                <li>7,850 real-world images from 100 scenes, 5 camera views per scene</li>
+                <li>Six glass types, with 3D models for surface reconstruction</li>
+                <li>Challenging, cluttered scenes with occlusions and varied lighting</li>
+                <li>Automatic depth-based labeling pipeline for segmentation and ground-truth</li>
+                <li>Manual test set for robust benchmarking (150 images)</li>
+                <li>Baseline model outperforms SOTA open-vocabulary detectors</li>
+                <li>Integrated with a real robot bartender scenario (81% success rate)</li>
+            </ul>
+        </div>
+    </section>-->
 
     <!-- Key Features & Contributions Section -->
     <section class="features glass">

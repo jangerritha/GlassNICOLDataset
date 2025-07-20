@@ -1,3 +1,75 @@
+/* Mobile optimization */
+@media (max-width: 600px) {
+  body {
+    font-size: 1em;
+    padding: 0 0.2em;
+  }
+  .hero h1 {
+    font-size: 1.5rem !important;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .hero .icon {
+    font-size: 1.3rem !important;
+    margin-right: 0.15em !important;
+  }
+  .author-list {
+    gap: 0.5em !important;
+    font-size: 0.98rem !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-image {
+    max-width: 98vw !important;
+    width: 100% !important;
+    margin: 1.2rem auto 0 auto !important;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.7em !important;
+  }
+  .gallery-item img {
+    max-width: 95vw !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .gallery .caption {
+    font-size: 0.95em !important;
+    padding: 0.2em 0.1em !important;
+  }
+  .container {
+    padding: 0.7em 0.2em !important;
+  }
+  .abstract-links {
+    flex-direction: column !important;
+    gap: 0.7em !important;
+    align-items: stretch !important;
+  }
+  .download-links {
+    flex-direction: column !important;
+    gap: 0.7em !important;
+    align-items: stretch !important;
+  }
+  .features ul {
+    padding-left: 1.1em !important;
+  }
+  .features li {
+    font-size: 0.98em !important;
+    margin-bottom: 0.5em !important;
+  }
+  .hri-scenario video {
+    max-width: 98vw !important;
+    width: 100% !important;
+  }
+  .pipeline img {
+    max-width: 98vw !important;
+    width: 100% !important;
+  }
+  .citation pre {
+    font-size: 0.85em !important;
+    padding: 0.5em !important;
+  }
+}
 /* Center the abstract-links button group below the abstract paragraph */
 .abstract-links {
     margin-top: 1.5em;
