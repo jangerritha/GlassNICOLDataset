@@ -5,88 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transparent Object Dataset</title>
     <link rel="stylesheet" href="style.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome for icons -->
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <h1>Transparent Object Dataset for Human-Robot Interaction</h1>
-        <p>A dataset for transparent object detection, classification, and surface reconstruction captured using a humanoid robot.</p>
-    </div>
-</header>
-
-<main>
-
-	<section class="image-gallery">
+    <!-- Hero Section -->
+    <section class="hero glass">
         <div class="container">
-            <img src="assets/nicol.JPG" alt="Robot Setup" class="main-image">
+            <h1 style="font-size:2.8rem; font-weight:800; letter-spacing:-1px; color:#1a237e; text-shadow:0 4px 24px rgba(26,35,126,0.10),0 1.5px 0 #fff; margin-bottom:0.2em;">
+                <span class="icon" style="font-size:2.2rem; vertical-align:0.1em; margin-right:0.3em; color:#00bcd4; filter:drop-shadow(0 2px 8px #00bcd4aa);">
+                    <i class="fas fa-glass-cheers"></i>
+                </span>
+                Glass<span style="color:#00bcd4;">NICOL</span> Dataset
+            </h1>
+            <ul class="author-list" style="list-style:none; padding:0; margin:0 0 1.2em 0; display:flex; flex-wrap:wrap; gap:1.2em; justify-content:center; font-size:1.08rem; color:#333; opacity:0.85;">
+                <li>Lukáš Gajdošech<sup style="font-size:0.7em;vertical-align:text-top;">&#8224;</sup></li>
+                <li>Hassan Ali<sup style="font-size:0.7em;vertical-align:text-top;">&#8224;</sup></li>
+                <li>Jan-Gerrit Habekost<sup style="font-size:0.7em;vertical-align:text-top;">&#8224;</sup></li>
+                <li>Martin Madaras</li>
+                <li>Matthias Kerzel</li>
+                <li>Stefan Wermter</li>
+            </ul>
+            <div style="text-align:center; font-size:0.98em; color:#555; margin-bottom:0.8em; opacity:0.85;">
+                <sup style="font-size:0.85em;vertical-align:super;">&#8224;</sup> These authors have contributed equally.
+            </div>
+            </ul>
+            <p class="subtitle">A real-world dataset for transparent object detection, segmentation, and 3D reconstruction in human-robot interaction.</p>
+            <img src="assets/nicol_v2.png" alt="NICOL humanoid robot" class="hero-image" style="width:100%;max-width:600px;display:block;margin:2.5rem auto 0 auto;">
         </div>
     </section>
 
-    <section class="intro">
+    <!-- Abstract / Summary Section -->
+    <section class="abstract glass">
         <div class="container">
-            <h2>Dataset Overview</h2>
-            <p>This dataset consists of 7700 frames captured from 100 scenes involving transparent objects. 
-			It includes data from multiple cameras mounted on a humanoid robot. 
-			The dataset is designed for challenging tasks such as object detection, depth estimation, and robot grasping for transparent materials like glasses.</p>
+            <h2>Abstract</h2>
+            <p>
+                <b>Shaken, Not Stirred:</b> We present a real-world dataset for transparent object perception, featuring <b>7,850 images</b> from <b>100 cluttered scenes</b> with six types of glasses, captured by five cameras on the NICOL humanoid robot. Our automated pipeline generates segmentation masks and depth ground truth with minimal human effort. The dataset enables robust training and benchmarking for glass detection, classification, and manipulation, and supports research in human-robot interaction.<br><br>
+                <i>Our baseline model outperforms state-of-the-art open-vocabulary detectors and achieves an 81% success rate in a real-world robot bartender task.</i>
+            </p>
+            <div class="abstract-links" style="margin-top:1.5em; display:flex; gap:1em; flex-wrap:wrap;">
+                <a class="download-btn" href="https://arxiv.org/abs/2503.04308" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                <a class="download-btn" href="https://github.com/gajdosech2/GlassNICOL2025" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a class="download-btn" href="#download-section" onclick="document.getElementById('download-section').scrollIntoView({behavior: 'smooth'}); return false;"><i class="fas fa-download"></i> Download Dataset</a>
+            </div>
         </div>
     </section>
 
-    <section class="downloads">
+    <!-- Gallery Section: Modalities from the Paper -->
+    <section class="gallery glass">
         <div class="container">
-            <h2>Download Dataset</h2>
+            <h2>Dataset Modalities</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/fish.png" alt="Eye Camera RGB Texture" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <div class="caption">Eye Camera RGB Texture</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/side.png" alt="Side RealSense RGB" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <div class="caption">Side RealSense RGB</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/fusion_crop.png" alt="Fusion of all RGB-D Views" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <div class="caption">Fusion of all RGB-D Views</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/prediction.png" alt="Network Prediction" style="width:100%;max-width:220px;display:block;margin:0 auto;">
+                    <div class="caption">Network Prediction</div>
+                </div>
+            </div>
+            <p class="caption" style="margin-top:1em;">Example scene from the validation split, showing different camera modalities and network output.</p>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about glass">
+        <div class="container">
+            <h2>About the Dataset</h2>
+            <p>
+                <b>100 scenes</b> with a mix of transparent and non-transparent objects were captured on a 2m x 1m tabletop in front of the NICOL robot. Each scene is scanned three times: (1) with clean glasses, (2) with 3D-printed green caps for height measurement, and (3) with identical glasses sprayed with chalk for ground-truth depth and segmentation. <br><br>
+                <b>Five cameras</b> (three RGB-D RealSense, two 4K fisheye RGB) provide multi-view data. Each scene has 25 robot head views, resulting in 7,850 images for training/validation and 150 manually labeled test images.<br><br>
+                <span class="icon"><i class="fas fa-lightbulb"></i></span> <b>Applications:</b> Transparent object detection, segmentation, depth estimation, robotic grasping, and HRI.
+            </p>
+        </div>
+    </section>
+
+    <!-- Auto-Labeling Pipeline Section -->
+    <section class="pipeline glass">
+        <div class="container">
+            <h2>Auto-Labeling Pipeline</h2>
+            <p>
+                Our pipeline uses depth sensing, color verification, and object detection to create accurate segmentation masks and bounding boxes. Depth images are converted to 3D point clouds, objects are detected and filtered by height and color, and final candidates are verified with YOLO-World and segmented with the Segment Anything Model (SAM). All annotations are created automatically, minimizing human labor.
+            </p>
+            <img src="assets/iros2025_fig1_v9.png" alt="Auto-labeling pipeline" style="width:100%;max-width:700px;margin:1em auto;display:block;">
+        </div>
+    </section>
+
+    <!-- Key Features & Contributions Section -->
+    <section class="features glass">
+        <div class="container">
+            <h2>Key Features & Contributions</h2>
+            <ul>
+                <li>7,850 real-world images from 100 scenes, 5 camera views per scene</li>
+                <li>Six glass types, with 3D models for surface reconstruction</li>
+                <li>Challenging, cluttered scenes with occlusions and varied lighting</li>
+                <li>Automatic depth-based labeling pipeline for segmentation and ground-truth</li>
+                <li>Manual test set for robust benchmarking (150 images)</li>
+                <li>Baseline model outperforms SOTA open-vocabulary detectors</li>
+                <li>Integrated with a real robot bartender scenario (81% success rate)</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <!-- Download Section -->
+    <!-- Bartending HRI Scenario Section -->
+    <section class="hri-scenario glass">
+        <div class="container">
+            <h2>Bartending HRI Scenario</h2>
+            <p>
+                Our dataset was collected in a real-world human-robot interaction scenario, where the NICOL humanoid robot acts as a bartender, perceiving and manipulating glasses on a cluttered tabletop. The robot uses multi-view perception and our auto-labeling pipeline to detect, segment, and interact with transparent objects.<br><br>
+                <b>Watch the scenario video below:</b>
+            </p>
+            <video controls style="width:100%;max-width:700px;margin:1em auto;display:block;">
+                <source src="assets/shaken_not_stirred_IROS_2025_short_compressed.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="downloads glass" id="download-section">
+        <div class="container">
+            <h2>Download the Dataset</h2>
+            <div style="color:#b00;font-weight:bold;margin-bottom:1em;">Coming soon! The dataset will be available for download after publication.</div>
             <div class="download-links">
-                <div class="download-item">
-                    <i class="fas fa-download"></i>
-                    <a href="path/to/dataset.zip" target="_blank">Dataset (Training and Validations Scenes)</a>
-                </div>
-				 <div class="download-item">
-                    <i class="fas fa-download"></i>
-                    <a href="path/to/dataset.zip" target="_blank">Dataset (Testing Split captured during Experiments)</a>
-                </div>
-                <div class="download-item">
-                    <i class="fas fa-file-alt"></i>
-                    <a href="path/to/training_data.json" target="_blank">Training JSON Files</a>
-                </div>
-                <div class="download-item">
-                    <i class="fas fa-file-alt"></i>
-                    <a href="path/to/validation_data.json" target="_blank">Validation JSON Files</a>
-                </div>
-                <div class="download-item">
-                    <i class="fas fa-cogs"></i>
-                    <a href="path/to/model_checkpoints" target="_blank">Model Checkpoints</a>
-                </div>
+                <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-download"></i> Full Dataset (Train/Val)</a>
+                <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-download"></i> Test Split (Experiments)</a>
+                <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-file-alt"></i> Training JSON</a>
+                <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-file-alt"></i> Validation JSON</a>
+                <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-cogs"></i> Model Checkpoints</a>
             </div>
         </div>
     </section>
 
-    <section class="figures">
+    <!-- Citation Section (last) -->
+    <section class="citation glass">
         <div class="container">
-            <h2>Dataset Modalities Visualization</h2>
-            <div class="subfigures">
-                <figure>
-                    <img src="assets/rgb.png" alt="Sample 1">
-                    <figcaption></figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/depth.png" alt="Sample 2">
-                    <figcaption></figcaption>
-                </figure>
-                <figure>
-                    <img src="assets/masks.png" alt="Sample 3">
-                    <figcaption></figcaption>
-                </figure>
-            </div>
+            <h2>Citation</h2>
+            <p>If you use this dataset, please cite our paper:</p>
+            <pre style="background:rgba(240,240,255,0.8);padding:1em;border-radius:8px;overflow-x:auto;font-size:0.95em;">@article[gajdosech2025shaken,
+  title={{Shaken, Not Stirred: A Novel Dataset for Visual Understanding of Glasses in Human-Robot Bartending Tasks}},
+  author={Gajdošech, Lukáš and Ali, Hassan and Habekost, Jan-Gerrit and Madaras, Martin and Kerzel, Matthias and Wermter, Stefan},
+  journal={arXiv preprint arXiv:2503.04308},
+  year={2025}
+]</pre>
         </div>
     </section>
-</main>
-
-<footer>
-    <div class="container">
-        <p>&copy; Lukáš Gajdošech, Hassan Ali, Jan-Gerrit Habekost, Martin Madaras and Matthias Kerzel</p>
-    </div>
-</footer>
-
+    <!-- Footer -->
+    <footer class="glass">
+        <div class="container">
+            <p>&copy; Lukáš Gajdošech, Hassan Ali, Jan-Gerrit Habekost, Martin Madaras, Matthias Kerzel</p>
+        </div>
+    </footer>
 </body>
 </html>
